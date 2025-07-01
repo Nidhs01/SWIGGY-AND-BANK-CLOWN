@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodieClown & BankClown</title>
+    <link rel="stylesheet" href="style.css"/>  
+   
+</head>
+<body>
+    <div class="container">
+        <div class="app-header">
+            <div class="app-logo">🍽️</div>
+            <h1>EPICUREAN & FINTECH</h1>
+            <p class="app-subtitle">Premium dining experience with secure payments</p>
+        </div>
+
+        <div class="app-tabs">
+            <button class="tab-btn active" onclick="switchTab('swiggy')">🍽️ Epicurean</button>
+            <button class="tab-btn" onclick="switchTab('bank')">🏛️ FinTech</button>
+        </div>
+
+        <!-- Swiggy Clone -->
+        <div id="swiggy-tab" class="tab-content active">
+            <h2 style="text-align: center; color: #2c3e50; margin-bottom: 40px; font-weight: 300; letter-spacing: 1px;">🍽️ Welcome to Epicurean</h2>
+            
+            <div class="food-grid" id="foodGrid">
+                <!-- Food items will be populated by JavaScript -->
+            </div>
+
+            <div class="cart-section" id="cartSection" style="display: none;">
+                <div class="cart-header">
+                    <div class="cart-title">🛒 Your Cart</div>
+                    <div class="cart-count" id="cartCount">0</div>
+                </div>
+                <div id="cartItems"></div>
+                <div class="cart-total" id="cartTotal">Total: ₹0</div>
+                <button class="proceed-btn" onclick="proceedToPayment()">Proceed to Payment 💳</button>
+            </div>
+        </div>
+
+        <!-- Bank Clone -->
+        <div id="bank-tab" class="tab-content">
+            <div class="bank-header">
+                <div class="bank-logo">🏛️</div>
+                <h2 class="bank-title">FINTECH SOLUTIONS</h2>
+                <p class="bank-subtitle">Your trusted financial partner</p>
+            </div>
+
+            <div class="balance-card">
+                <div class="balance-label">Current Balance</div>
+                <div class="balance-amount" id="currentBalance">₹5,000</div>
+            </div>
+
+            <div id="paymentDetails" class="payment-details" style="display: none;">
+                <h3>🍕 Payment Details</h3>
+                <div id="paymentItems"></div>
+                <div class="payment-item payment-total">
+                    <span>Total Amount:</span>
+                    <span id="paymentTotal">₹0</span>
+                </div>
+            </div>
+
+            <div class="transaction-section">
+                <div class="transaction-card">
+                    <h3>💰 Deposit Funds</h3>
+                    <div class="input-group">
+                        <label for="addAmount">Amount</label>
+                        <input type="number" id="addAmount" placeholder="Enter amount to add">
+                    </div>
+                    <button class="transaction-btn" onclick="addMoney()">Deposit</button>
+                </div>
+
+                <div class="transaction-card">
+                    <h3>💳 Process Payment</h3>
+                    <div class="input-group">
+                        <label for="payAmount">Amount</label>
+                        <input type="number" id="payAmount" placeholder="Enter amount to pay">
+                    </div>
+                    <button class="transaction-btn" onclick="makePayment()">Process Payment</button>
+                </div>
+            </div>
+
+            <div class="success-message" id="successMessage"></div>
+            <div class="error-message" id="errorMessage"></div>
+        </div>
+    </div>
+
+ 
+    <script src="codee.js"></script>
+</body>
+
+</html>
